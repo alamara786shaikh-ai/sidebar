@@ -1,16 +1,18 @@
 const cl = console.log;
 
-const sidebar = document.getElementById('sidebar')
-const overlay = document.getElementById('overlay')
-const sideBarOpen = document.getElementById('sideBarOpen')
-const sideBarClose = document.getElementById('sideBarClose')
+const tabheads = [...document.querySelectorAll('.tabhead li')];
 
-
-function toggleSideBar(){
-    sidebar.classList.toggle('active')
-    overlay.classList.toggle('active')
+function onTabHandler(eve) {
+    const targetId = eve.target.dataset.id
+    document.querySelector('.tabhead .active').classList.remove('active');
+    eve.target.classList.add('active');
+    let visibleDiv = document.querySelector('.tab-content.active');
+    visibleDiv.classList.remove('active');
+    let selectedDiv = document.getElementById(targetId);
+    selectedDiv.classList.add('active');
 }
 
-sideBarOpen.addEventListener('click', toggleSideBar)
-sideBarClose.addEventListener('click', toggleSideBar)
-overlay.addEventListener('click', toggleSideBar)
+
+tabheads.forEach(li => {
+    li.addEventListener('click', onTabHandler)
+})

@@ -1,69 +1,44 @@
-body{
+body {
     background-color: #ededed;
 }
 
-.section {
-    height: 50vh;
-    border: 1px solid #ededed;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 300px;
+.tabhead{
+    list-style: none;
+    margin : 0;
+    padding: 0;
+    display: flex;
     background-color: #000;
-    z-index: 2;
-    transform: translateX(-100%);
-    transition: all .3s ease-in-out;
+    display: flex;
 }
 
-.sidebar.active {
-    transform: translateX(0%);
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0,0,0,.6);
-    z-index: 1;
-    cursor: pointer;
-    display: none;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.overlay.active {
-    display: block;
-}
-
-.sideBarOpen {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-}
-
-.sideBarClose {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.tabhead li{
+    flex-grow: 1;
+    padding: 10px;
     color: #fff;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
-
-@keyframes fadeIn {
-    from {
+.tabhead li.active{
+    background-color: orange
+}
+.tab-content{
+    padding:10px;
+    border: 1px solid #000;
+    border-top: none;
+    animation: fadeIn 0.3s ease-in-out;
+    display: none;
+}
+.tab-content.active{
+    display: block;
+}
+@keyframes fadeIn{
+    0%{
         opacity: 0;
     }
-
-    to {
+    100%{
         opacity: 1;
     }
-    
 }
+
 
