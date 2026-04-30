@@ -1,0 +1,44 @@
+body {
+    background-color: #ededed;
+}
+
+.tabhead{
+    list-style: none;
+    margin : 0;
+    padding: 0;
+    display: flex;
+    background-color: #000;
+    display: flex;
+}
+
+.tabhead li{
+    flex-grow: 1;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.tabhead li.active{
+    background-color: orange
+}
+.tab-content{
+    padding:10px;
+    border: 1px solid #000;
+    border-top: none;
+    animation: fadeIn 0.3s ease-in-out;
+    display: none;
+}
+.tab-content.active{
+    display: block;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
